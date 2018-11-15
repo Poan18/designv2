@@ -1,3 +1,5 @@
-#### Footer col 1
+#### Dåligt skämt
 
-Med brödtext i ett stycke som säger något trevligt om just detta block, eller kanske en lista av länkar.
+Vad är skillnaden på ett lejon och en giraff?
+
+En giraff har en större hals.
