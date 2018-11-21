@@ -5,33 +5,22 @@
  * to style up the website so it is useable.
  */
 
-/* Hide submenu, leave this to kmom02 */
-.rm-desktop ul {
-    display: none;
+// /* Hide submenu, leave this to kmom02 */
+ .rm-desktop ul {
+     display: none;
 }
 
-/* Hide responsive/mobile menu, leave this to kmom02 */
-.rm-navbar-max {
-    display: none;
-}
-
-html {
-    margin:0;
-    padding:0;
-
-}
-
-body {
-    background-color: white;
-    margin:0;
-    padding:0;
-}
+ /* Hide responsive/mobile menu, leave this to kmom02 */
+ .rm-navbar-max {
+   display: none;
+ }
 
 h1 {
     font-size: 200%;
 }
 
-.wrap-all {
+.inner-wrap {
+    overflow: auto;
 }
 
 .my-navbar {
@@ -40,7 +29,7 @@ h1 {
     padding: 0px;
 }
 
-.rm-navbar {
+.region-header-col-2 {
     text-align: center;
 }
 
@@ -109,7 +98,6 @@ h1 {
 }
 
 .region-sidebar-right {
-    margin-left: 1px;
     width: 33%;
 }
 
@@ -142,19 +130,11 @@ h1 {
     margin: 0 10px 0 0;
 }
 
-.right {
-    float: right;
-}
-
-.left {
-    float: left;
-}
 .outer-wrap-footer {
     color: #ddd;
     background-color: rgb(60, 60, 60);
     width: 100%;
     text-align: center;
-    height: 200px;
     padding-top: 48px;
     padding-bottom: 48px;
     margin-top: 100px;
@@ -164,4 +144,8 @@ h1 {
     margin: auto;
     display: flex;
     width: 1000px;
+}
+
+.footer-column {
+    width: 33%
 }
