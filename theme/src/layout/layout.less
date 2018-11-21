@@ -1,0 +1,134 @@
+/**
+ * Layout style for general structure of header, navbar, main, footer
+ * and other regions of the page including route specific styles.
+ */
+
+/**
+ * Variables
+ */
+
+
+/**
+ * General layout
+ */
+
+.inner-wrap-header {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.my-navbar {
+    display: inline-flex;
+    list-style-type: none;
+    padding: 0px;
+}
+
+.region-header-col-2  {
+    text-align: center;
+}
+
+.outer-wrap-flash-message {
+    text-align: center;
+}
+
+.region-header-col-1{
+    text-align: center;
+}
+
+.outer-wrap-breadcrumb {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.outer-wrap-main {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-size: 120%;
+}
+
+.next-previous {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.region-flash {
+    text-align: center;
+}
+
+.author-byline {
+    border: thin solid rgba(0, 0, 0, .8);
+    overflow: auto;
+    padding: 15px;
+    margin-top: 50px;
+}
+
+.author-byline figure {
+    margin: 0 10px 0 0;
+}
+
+.outer-wrap-footer {
+    color: #ddd;
+    background-color: rgb(60, 60, 60);
+    max-width: 100%;
+    text-align: center;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    margin-top: 100px;
+}
+
+.inner-wrap-footer {
+    max-width: 100%;
+}
+.footer-column-wrapper {
+    margin: auto;
+    width: 1000px;
+    max-width: 100%;
+}
+
+.footer-column {
+    width: 33%;
+    display: inline;
+    float: left;
+}
+
+/**
+* Main, and sidebars layout
+*/
+
+.inner-wrap.main {
+    //.clearfix()
+    overflow: auto;
+}
+
+.region-sidebar-left,
+.region-sidebar-right {
+    width: 30%;
+    float: left;
+}
+
+.region-sidebar-left.has-sidebar-right,
+.region-sidebar-right.has-sidebar-left {
+    width: 20%;
+}
+
+.region-main {
+    width: 70%;
+    margin-left: 10%;
+    float: left;
+    overflow-y: hidden;
+
+    &.has-sidebar {
+        margin-left: 0;
+    }
+    &.has-sidebar-left.has-sidebar-right {
+        width: 60%;
+    }
+}
+
+.site-footer {
+    text-align: center;
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
