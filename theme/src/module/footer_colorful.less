@@ -1,0 +1,28 @@
+/**
+ * Footer style
+ */
+
+ .inner-wrap-footer {
+     #desinax-vgrid.grid(100%);
+ }
+
+.outer-wrap-footer {
+    color: #CC14AD;
+    background-color: #B2A257;
+    text-align: center;
+}
+
+.footer-column {
+    #desinax-vgrid.column(@columns / 3);
+}
+
+.site-footer {
+    text-align: center;
+    #desinax-vgrid.column(@columns);
+}
+
+@media (max-width: 920px){
+    .footer-column {
+        #desinax-vgrid.column(@columns );
+    }
+}

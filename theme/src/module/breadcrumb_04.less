@@ -1,0 +1,22 @@
+/**
+ * Breadcrumb style
+ */
+
+ .region-breadcrumb {
+     #desinax-vgrid.column(@columns);
+     margin-bottom: 24px;
+     // background-color: #CCC;
+ }
+
+ .inner-wrap-breadcrumb {
+     // background-color: #CCC;
+ }
+
+ .breadcrumb-list ul li {
+     display: inline-block;
+ }
+
+ .breadcrumb-list ul li:not(:first-child)::before {
+     content: '>';
+     margin-right: 10px;
+ }

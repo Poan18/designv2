@@ -1,0 +1,133 @@
+/**
+ * Layout using vgrid.
+ */
+
+/**
+ * Variables
+ */
+
+
+/**
+ * General layout
+ */
+
+ .row {
+     #desinax-vgrid.row();
+     margin-bottom: 12px;
+ }
+
+ .inner-wrap {
+    #desinax-vgrid.grid(1100px);
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+a :hover {
+    text-decoration: underline;
+    color: white;
+}
+
+ /**
+ * Main, and sidebars layout
+ */
+
+ .inner-wrap-main {
+     background-color: #CCC;
+ }
+
+ .region-sidebar-left.has-sidebar-right,
+ .region-sidebar-right.has-sidebar-left {
+      #desinax-vgrid.column(@columns * 1 / 4 - 1);
+ }
+
+ .region-main {
+     #desinax-vgrid.column(@columns * 3 / 4);
+     #desinax-vgrid.push(3);
+
+     &.has-sidebar {
+         #desinax-vgrid.push(0);
+     }
+     &.has-sidebar-right {
+         #desinax-vgrid.column(@columns * 3 / 4 - 1);
+     }
+     &.has-sidebar-left.has-sidebar-right {
+          #desinax-vgrid.column(@columns - 10);
+     }
+ }
+
+ .region-sidebar-left,
+ .region-sidebar-right {
+      #desinax-vgrid.column(@columns * 1 / 4);
+ }
+
+ .region-sidebar-right {
+     #desinax-vgrid.push(1);
+ }
+
+ .next-previous {
+     display: flex;
+     justify-content: space-between;
+     flex-direction: row-reverse;
+ }
+
+/**
+ * Main layout
+ */
+
+
+.figure.right {
+    float: right;
+}
+
+/**
+ * Vgrid layout
+ */
+
+.vgrid .inner-wrap {
+    @gridImage: "../img/grid_24x30x10-nomargin.png";
+    //@gridImage: "../../img/grid_12x60x20-nomargin.png";
+    #desinax-vgrid.showGrid(@gridImage, 1100px);
+
+    &.inner-wrap-header,
+    &.inner-wrap-footer {
+        #desinax-vgrid.showGrid(@gridImage);
+    }
+}
+
+
+/**
+* Respnsive 1, 2, 3
+*/
+
+@media screen and (max-width: 1000px) {
+    .region-main{
+        #desinax-vgrid.column(@columns);
+
+        &.has-sidebar-left.has-sidebar-right {
+            #desinax-vgrid.column(@columns);
+        }
+    }
+    .region-sidebar-left {
+        #desinax-vgrid.column(@columns);
+    }
+    .region-sidebar-left.has-sidebar-right,
+    .region-sidebar-right.has-sidebar-left {
+        #desinax-vgrid.column(@columns);
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .region-main.has-sidebar-right {
+        #desinax-vgrid.column(@columns);
+    }
+
+    .region-sidebar-right {
+        #desinax-vgrid.column(@columns);
+        #desinax-vgrid.push(0);
+
+    }
+
+}
