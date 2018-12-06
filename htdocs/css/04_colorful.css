@@ -4388,7 +4388,7 @@ body {
   padding: 0;
   color: black;
   background-color: grey;
-  font: 18px/1.33333333 monospace;
+  font: 18px/1.33333333 Gloria Hallelujah;
   overflow: hidden;
 }
 img {
@@ -4400,7 +4400,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: monospace;
+  font-family: Gloria Hallelujah;
   margin-top: 24px;
   margin-bottom: 24px;
 }
@@ -5307,6 +5307,12 @@ a:hover {
     margin-left: 0.52083333%;
     margin-right: 0.52083333%;
   }
+}
+@font-face {
+  font-family: 'Gloria Hallelujah';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Gloria Hallelujah'), local('GloriaHallelujah'), url(https://fonts.gstatic.com/s/gloriahallelujah/v9/LYjYdHv3kUk9BMV96EIswT9DIbW-MIS11zY.ttf) format('truetype');
 }
 body {
   background-color: #FFD100;
