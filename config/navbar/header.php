@@ -15,6 +15,11 @@ return [
             "title" => "Första sidan, börja här.",
         ],
         [
+            "text" => "Blogg",
+            "url" => "blogg",
+            "title" => "Blogg.",
+        ],
+        [
             "text" => "Redovisning",
             "url" => "redovisning",
             "title" => "Redovisningstexter från kursmomenten.",
@@ -34,6 +39,11 @@ return [
                         "text" => "Kmom03",
                         "url" => "redovisning/kmom03",
                         "title" => "Redovisning för kmom03.",
+                    ],
+                    [
+                        "text" => "Kmom04",
+                        "url" => "redovisning/kmom04",
+                        "title" => "Redovisning för kmom04.",
                     ],
                 ],
             ],
