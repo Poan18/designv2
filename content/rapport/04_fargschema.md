@@ -110,5 +110,5 @@ Referenser
 Övrigt
 -----------------------
 
-_Skriven av: Pontus Andersson_
+_Skriven och utförd av: Pontus Andersson_
 
