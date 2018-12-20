@@ -1,10 +1,5 @@
 /*!
- * Stylesheet for Kmom05.
- *
- * This stylesheet is for the design course and kmom03 where we use LESS.
- */
-/*!
- * DOES NOT WORK, IS USED FOR COLORFUL, DARK, MINI.
+ * Stylesheet for Kmom06 - Designprinciper.
  *
  * This stylesheet is for the design course and kmom03 where we use LESS.
  */
@@ -16,8 +11,8 @@
  * http://stackoverflow.com/questions/211383/what-methods-of-clearfix-can-i-use
  */
 /**
- * Normalize and reset the style.
- */
+* Normalize and reset the style.
+*/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -4327,12 +4322,6 @@ template {
   font-family: 'Font Awesome 5 Brands';
 }
 /**
- * Fonts from Google.
- */
-/**
- * Internal self contained modules, save in directory module/.
- */
-/**
  * Import the typographic grid.
  */
 /**
@@ -4372,8 +4361,284 @@ template {
   background-image: url("../img/magic-number-24px.png");
 }
 /**
- * Base style to affect HTML elements on a general scale.
+ * A responsive menu.
  */
+/**
+ * Style for responsive menu
+ */
+/**
+ * Outer wrapper for menu
+ */
+.rm-navbar {
+  position: relative;
+}
+.rm-navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/**
+ * Avoid scrolling mobile devices
+ * OBSOLETE?
+ */
+/**
+ * Meny layout for the small buttonized menu.
+ */
+.rm-small {
+  display: none;
+  float: right;
+}
+a.rm-button {
+  display: inline-block;
+  color: inherit;
+  background-color: transparent;
+  outline: none;
+}
+a.rm-button:active {
+  color: inherit;
+  background-color: transparent;
+}
+a.rm-button .rm-button-face-1 {
+  position: absolute;
+  transition: color 0.1s ease;
+}
+a.rm-button .rm-button-face-2 {
+  position: relative;
+  color: transparent;
+  transition: color 0.1s ease;
+}
+a.rm-button.rm-clicked {
+  color: #9FB129;
+  background-color: transparent;
+}
+a.rm-button.rm-clicked .rm-button-face-1 {
+  color: transparent;
+}
+a.rm-button.rm-clicked .rm-button-face-2 {
+  z-index: 2;
+  color: inherit;
+}
+/**
+ * Standard meny layout, valid for any subtype.
+ */
+.rm-default li {
+  display: inline-block;
+}
+.rm-default li li {
+  display: block;
+  min-width: 10em;
+}
+.rm-default a {
+  display: block;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 1em;
+  outline: none;
+}
+.rm-default ul {
+  position: absolute;
+  z-index: 9999;
+  left: -9999px;
+}
+.rm-default ul.rm-show-submenu {
+  left: 0;
+}
+.rm-default ul li {
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.4);
+}
+.rm-default ul ul {
+  left: -9999px;
+}
+/**
+ * Menu layout for the desktop variant, usually full width of browser.
+ */
+.rm-desktop ul {
+  background-color: inherit;
+}
+.rm-desktop li {
+  position: relative;
+}
+.rm-desktop li a:hover,
+.rm-desktop li.current-menu-item a {
+  text-decoration: underline;
+}
+.rm-desktop li a {
+  color: inherit;
+  background-color: inherit;
+}
+.rm-desktop li a:hover {
+  color: inherit;
+  background-color: inherit;
+}
+.rm-desktop li:hover > ul {
+  left: 0;
+}
+.rm-desktop li:hover > ul.rm-submenu-level-1 {
+  left: auto;
+  left: 30%;
+}
+.rm-desktop li .rm-submenu-button {
+  display: none;
+}
+/**
+ * Menu layout for the mobile variant, usually for mobile screens.
+ */
+.rm-mobile {
+  width: 100%;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
+  background-color: #444;
+  color: #fff;
+}
+.rm-mobile a {
+  color: inherit;
+}
+.rm-mobile li {
+  display: block;
+  box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.4);
+  /*        // Header of submenu is closed
+        //&.sub-menu, // For WordPress menu generating
+        &.rm-submenu > a:before {
+            content: "\f0d7";
+        }
+
+        // Header of submenu is opened
+        &.rm-submenu-open > a:before {
+            content: "\f0d8";
+        }
+*/
+}
+.rm-mobile li.rm-submenu-open > ul {
+  position: relative;
+  left: 0;
+}
+/**
+ * Menu layout for the max variant, for mobile screens and complete menues.
+ * Swipe from right by default.
+ */
+.rm-max.rm-navbar {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+}
+.rm-max .rm-small {
+  display: block;
+}
+.rm-max .rm-small .rm-button {
+  color: inherit;
+}
+.rm-max .rm-small .rm-button.rm-clicked {
+  color: #9FB129;
+  position: fixed;
+  top: 16px;
+  right: 24px;
+  z-index: 999;
+}
+.rm-max .rm-mobile {
+  transition: all 0.15s linear;
+  position: fixed;
+  z-index: 998;
+  top: 0;
+  transform: translateX(100%);
+  width: 500px;
+  max-width: 500px;
+  height: 500px;
+  overflow-y: auto;
+  padding-top: 72px;
+  background-color: #131313;
+  /* Color when menu item is clicked */
+  /* Button for submenu */
+  /* Style for submenu */
+}
+.rm-max .rm-mobile li a:active {
+  background-color: transparent;
+}
+.rm-max .rm-mobile.rm-clicked {
+  transform: translateX(0);
+}
+.rm-max .rm-mobile a:hover {
+  text-decoration: underline;
+}
+.rm-max .rm-mobile .rm-submenu-button {
+  float: right;
+  box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.4);
+  background-color: #444;
+  padding: 8px 24px;
+  margin-right: 8px;
+  margin-top: 10px;
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+}
+.rm-max .rm-mobile .rm-submenu-button:after {
+  content: "\25BC";
+}
+.rm-max .rm-mobile .rm-submenu-button:hover {
+  text-decoration: none;
+  background-color: #ccc;
+}
+.rm-max .rm-mobile li ul {
+  padding-left: 8px;
+}
+.rm-max .rm-mobile .rm-submenu-open > .rm-submenu-button:after {
+  content: "\25B2";
+}
+.rm-max.rm-swipe-left .rm-mobile {
+  left: 0;
+}
+.rm-max.rm-swipe-right .rm-mobile {
+  right: 0;
+}
+/**
+ * Style for responsive menu
+ */
+/**
+  * Example on media queries
+  */
+@media screen and (max-width: 680px) {
+  .rm-small {
+    display: block;
+  }
+  .rm-desktop {
+    display: none;
+  }
+}
+@media screen and (min-width: 680px) {
+  .rm-small {
+    display: none;
+  }
+}
+/**
+ * Import the vertical grid.
+ */
+/**
+ * Fluid and Responsive Vertical Grid
+ */
+/**
+ * Namespace what could be namespaced
+ */
+#desinax-vgrid {
+  /**
+     * Wrap grid in a container.
+     */
+  /**
+     * Show grid.
+     */
+  /**
+     * All columns must be wrapped in a row.
+     */
+  /**
+     * Create a column spanning @col columns.
+     */
+  /**
+     * Push a column @offset columns.
+     */
+  /**
+     * Pull a column left @offset columns.
+     */
+  /**
+     * Pull a column right @offset columns.
+     */
+}
 /**
  * Base style to affect HTML elements on a general scale.
  */
@@ -4386,10 +4651,11 @@ html {
 body {
   margin: 0;
   padding: 0;
-  color: black;
-  background-color: grey;
+  color: #333;
+  background: url(../image/thailandimg.jpg?sharpen);
   font: 18px/1.33333333 Didact Gothic;
   overflow: hidden;
+  background-attachment: fixed;
 }
 img {
   max-width: 100%;
@@ -4400,7 +4666,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Poiret One;
+  font-family: 'Fira Sans', sans-serif;
   margin-top: 24px;
   margin-bottom: 24px;
 }
@@ -4679,381 +4945,6 @@ hr::after {
   background-color: #fff;
 }
 /**
- * Import the vertical grid.
- */
-/**
- * Fluid and Responsive Vertical Grid
- */
-/**
- * Namespace what could be namespaced
- */
-#desinax-vgrid {
-  /**
-     * Wrap grid in a container.
-     */
-  /**
-     * Show grid.
-     */
-  /**
-     * All columns must be wrapped in a row.
-     */
-  /**
-     * Create a column spanning @col columns.
-     */
-  /**
-     * Push a column @offset columns.
-     */
-  /**
-     * Pull a column left @offset columns.
-     */
-  /**
-     * Pull a column right @offset columns.
-     */
-}
-/**
- * Layout style for general structure of header, navbar, main, footer
- * and other regions of the page including route specific styles.
- */
-/**
- * Layout for responsive style through media queries.
- */
-@media screen and (max-width: 1500px) {
-  .site-logo {
-    display: none;
-  }
-}
-/**
- * Show off the regions used in the website, to ease styling.
- */
-.regions .outer-wrap {
-  background-color: #f4e3c9;
-  border: 1px solid #e3b774;
-}
-.regions .inner-wrap {
-  background-color: #f4e0e9;
-  border: 1px solid #d995b4;
-}
-.regions .region-header-col-1,
-.regions .region-header-col-2,
-.regions .region-header-col-3,
-.regions .region-flash,
-.regions .region-breadcrumb,
-.regions .region-flash-message,
-.regions .region-columns-above,
-.regions .region-main,
-.regions .region-after-main,
-.regions .region-columns-below,
-.regions .region-sidebar-left,
-.regions .region-sidebar-right,
-.regions .region-footer,
-.regions .region-footer-column-1,
-.regions .region-footer-column-2,
-.regions .region-footer-column-3 {
-  background-color: #b5dce1;
-  border: 1px solid #6cbac4;
-  color: #111;
-}
-/**
- * A responsive menu.
- */
-/**
- * Style for responsive menu
- */
-/**
- * Outer wrapper for menu
- */
-.rm-navbar {
-  position: relative;
-}
-.rm-navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-/**
- * Avoid scrolling mobile devices
- * OBSOLETE?
- */
-/**
- * Meny layout for the small buttonized menu.
- */
-.rm-small {
-  display: none;
-  float: right;
-}
-a.rm-button {
-  display: inline-block;
-  color: inherit;
-  background-color: transparent;
-  outline: none;
-}
-a.rm-button:active {
-  color: inherit;
-  background-color: transparent;
-}
-a.rm-button .rm-button-face-1 {
-  position: absolute;
-  transition: color 0.1s ease;
-}
-a.rm-button .rm-button-face-2 {
-  position: relative;
-  color: transparent;
-  transition: color 0.1s ease;
-}
-a.rm-button.rm-clicked {
-  color: #9FB129;
-  background-color: transparent;
-}
-a.rm-button.rm-clicked .rm-button-face-1 {
-  color: transparent;
-}
-a.rm-button.rm-clicked .rm-button-face-2 {
-  z-index: 2;
-  color: inherit;
-}
-/**
- * Standard meny layout, valid for any subtype.
- */
-.rm-default li {
-  display: inline-block;
-}
-.rm-default li li {
-  display: block;
-  min-width: 10em;
-}
-.rm-default a {
-  display: block;
-  text-decoration: none;
-  white-space: nowrap;
-  padding: 1em;
-  outline: none;
-}
-.rm-default ul {
-  position: absolute;
-  z-index: 9999;
-  left: -9999px;
-}
-.rm-default ul.rm-show-submenu {
-  left: 0;
-}
-.rm-default ul li {
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.4);
-}
-.rm-default ul ul {
-  left: -9999px;
-}
-/**
- * Menu layout for the desktop variant, usually full width of browser.
- */
-.rm-desktop ul {
-  background-color: inherit;
-}
-.rm-desktop li {
-  position: relative;
-}
-.rm-desktop li a:hover,
-.rm-desktop li.current-menu-item a {
-  text-decoration: underline;
-}
-.rm-desktop li a {
-  color: inherit;
-  background-color: inherit;
-}
-.rm-desktop li a:hover {
-  color: inherit;
-  background-color: inherit;
-}
-.rm-desktop li:hover > ul {
-  left: 0;
-}
-.rm-desktop li:hover > ul.rm-submenu-level-1 {
-  left: auto;
-  left: 30%;
-}
-.rm-desktop li .rm-submenu-button {
-  display: none;
-}
-/**
- * Menu layout for the mobile variant, usually for mobile screens.
- */
-.rm-mobile {
-  width: 100%;
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
-  background-color: #444;
-  color: #fff;
-}
-.rm-mobile a {
-  color: inherit;
-}
-.rm-mobile li {
-  display: block;
-  box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.4);
-  /*        // Header of submenu is closed
-        //&.sub-menu, // For WordPress menu generating
-        &.rm-submenu > a:before {
-            content: "\f0d7";
-        }
-
-        // Header of submenu is opened
-        &.rm-submenu-open > a:before {
-            content: "\f0d8";
-        }
-*/
-}
-.rm-mobile li.rm-submenu-open > ul {
-  position: relative;
-  left: 0;
-}
-/**
- * Menu layout for the max variant, for mobile screens and complete menues.
- * Swipe from right by default.
- */
-.rm-max.rm-navbar {
-  position: absolute;
-  top: 16px;
-  right: 24px;
-}
-.rm-max .rm-small {
-  display: block;
-}
-.rm-max .rm-small .rm-button {
-  color: inherit;
-}
-.rm-max .rm-small .rm-button.rm-clicked {
-  color: #9FB129;
-  position: fixed;
-  top: 16px;
-  right: 24px;
-  z-index: 999;
-}
-.rm-max .rm-mobile {
-  transition: all 0.15s linear;
-  position: fixed;
-  z-index: 998;
-  top: 0;
-  transform: translateX(100%);
-  width: 500px;
-  max-width: 500px;
-  height: 500px;
-  overflow-y: auto;
-  padding-top: 72px;
-  background-color: #131313;
-  /* Color when menu item is clicked */
-  /* Button for submenu */
-  /* Style for submenu */
-}
-.rm-max .rm-mobile li a:active {
-  background-color: transparent;
-}
-.rm-max .rm-mobile.rm-clicked {
-  transform: translateX(0);
-}
-.rm-max .rm-mobile a:hover {
-  text-decoration: underline;
-}
-.rm-max .rm-mobile .rm-submenu-button {
-  float: right;
-  box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.4);
-  background-color: #444;
-  padding: 8px 24px;
-  margin-right: 8px;
-  margin-top: 10px;
-  border-radius: 5px;
-  position: relative;
-  z-index: 1;
-}
-.rm-max .rm-mobile .rm-submenu-button:after {
-  content: "\25BC";
-}
-.rm-max .rm-mobile .rm-submenu-button:hover {
-  text-decoration: none;
-  background-color: #ccc;
-}
-.rm-max .rm-mobile li ul {
-  padding-left: 8px;
-}
-.rm-max .rm-mobile .rm-submenu-open > .rm-submenu-button:after {
-  content: "\25B2";
-}
-.rm-max.rm-swipe-left .rm-mobile {
-  left: 0;
-}
-.rm-max.rm-swipe-right .rm-mobile {
-  right: 0;
-}
-/**
- * Style for responsive menu
- */
-/**
-  * Example on media queries
-  */
-@media screen and (max-width: 680px) {
-  .rm-small {
-    display: block;
-  }
-  .rm-desktop {
-    display: none;
-  }
-}
-@media screen and (min-width: 680px) {
-  .rm-small {
-    display: none;
-  }
-}
-/**
- * Modules
- */
-/**
- * Flash image style
- */
-.outer-wrap-flash-message {
-  text-align: center;
-}
-.region-flash {
-  text-align: center;
-  display: inline;
-  float: left;
-  width: 98.95833333%;
-  margin-left: 0.52083333%;
-  margin-right: 0.52083333%;
-}
-/**
- * Breadcrumb style
- */
-.region-breadcrumb {
-  display: inline;
-  float: left;
-  width: 98.95833333%;
-  margin-left: 0.52083333%;
-  margin-right: 0.52083333%;
-  margin-bottom: 24px;
-  background-color: rgba(200, 200, 200, 0.4);
-}
-.breadcrumb-list ul li {
-  display: inline-block;
-}
-.breadcrumb-list ul li:not(:first-child)::before {
-  content: '>';
-  margin-right: 10px;
-}
-/**
- * Byline style
- */
-.author-byline {
-  border: thin solid rgba(0, 0, 0, 0.8);
-  overflow: auto;
-  padding: 15px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-.author-byline figure {
-  margin: 0 10px 0 0;
-  float: left;
-}
-/**
- * My own settings, not currently in their own module.
- */
-/**
  * Layout using vgrid.
  */
 /**
@@ -5090,6 +4981,10 @@ a:hover {
 /**
  * Main, and sidebars layout
  */
+.inner-wrap-main {
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.3);
+}
 .region-sidebar-left.has-sidebar-right,
 .region-sidebar-right.has-sidebar-left {
   display: inline;
@@ -5229,6 +5124,13 @@ a:hover {
 .my-navbar {
   list-style-type: none;
 }
+.region-header {
+  position: fixed;
+  top: 0;
+  width: 101%;
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.3);
+}
 .region-header-col-2 {
   text-align: center;
 }
@@ -5244,6 +5146,9 @@ a:hover {
 }
 .site-logo {
   display: none;
+}
+.outer-wrap-header {
+  margin-bottom: 5%;
 }
 .region-header-col-1,
 .region-header-col-3 {
@@ -5261,7 +5166,7 @@ a:hover {
   margin-right: 0.52083333%;
 }
 .my-navbar li {
-  background-color: white;
+  background-color: rgba(255, 255, 255);
 }
 .rm-desktop li a {
   color: inherit;
@@ -5280,7 +5185,7 @@ a:hover {
 }
 .outer-wrap-footer {
   color: white;
-  background-color: #3c3c3c;
+  background-color: rgba(43, 43, 43, 0.8);
   text-align: center;
 }
 .footer-column {
@@ -5307,6 +5212,54 @@ a:hover {
     margin-right: 0.52083333%;
   }
 }
+/**
+ * Flash image style
+ */
+.outer-wrap-flash-message {
+  text-align: center;
+}
+.region-flash {
+  text-align: center;
+  display: inline;
+  float: left;
+  width: 98.95833333%;
+  margin-left: 0.52083333%;
+  margin-right: 0.52083333%;
+}
+/**
+ * Byline style
+ */
+.author-byline {
+  border: thin solid rgba(0, 0, 0, 0.8);
+  overflow: auto;
+  padding: 15px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.author-byline figure {
+  margin: 0 10px 0 0;
+  float: left;
+}
+/**
+ * Breadcrumb style
+ */
+.region-breadcrumb {
+  display: inline;
+  float: left;
+  width: 98.95833333%;
+  margin-left: 0.52083333%;
+  margin-right: 0.52083333%;
+  margin-bottom: 24px;
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.3);
+}
+.breadcrumb-list ul li {
+  display: inline-block;
+}
+.breadcrumb-list ul li:not(:first-child)::before {
+  content: '>';
+  margin-right: 10px;
+}
 @font-face {
   font-family: 'Didact Gothic';
   font-style: normal;
@@ -5318,6 +5271,12 @@ a:hover {
   font-style: normal;
   font-weight: 400;
   src: local('Poiret One'), local('PoiretOne-Regular'), url(https://fonts.gstatic.com/s/poiretone/v6/UqyVK80NJXN4zfRgbdfbo55cUg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Fira Sans Regular'), local('FiraSans-Regular'), url(https://fonts.gstatic.com/s/firasans/v8/va9E4kDNxMZdWfMOD5Vvl4jO.ttf) format('truetype');
 }
 /**
  * Figure and figcaption for images and other media using figure/figcaption
@@ -5446,8 +5405,4 @@ figure.asciinema .asciicast {
 figure.codepen,
 figure.figure-codepen {
   width: 100%;
-}
-body {
-  background-color: white;
-  color: black;
 }

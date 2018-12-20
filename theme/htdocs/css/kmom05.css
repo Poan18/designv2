@@ -4,7 +4,7 @@
  * This stylesheet is for the design course and kmom03 where we use LESS.
  */
 /*!
- * DOES NOT WORK, IS USED FOR COLORFUL, DARK, MINI
+ * DOES NOT WORK, IS USED FOR COLORFUL, DARK, MINI.
  *
  * This stylesheet is for the design course and kmom03 where we use LESS.
  */
@@ -5027,6 +5027,7 @@ a.rm-button.rm-clicked .rm-button-face-2 {
   margin-left: 0.52083333%;
   margin-right: 0.52083333%;
   margin-bottom: 24px;
+  background-color: rgba(200, 200, 200, 0.4);
 }
 .breadcrumb-list ul li {
   display: inline-block;

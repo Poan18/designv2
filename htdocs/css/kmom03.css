@@ -4760,9 +4760,6 @@ hr::after {
 .region-header-col-2 {
   text-align: center;
 }
-.outer-wrap-flash-message {
-  text-align: center;
-}
 .region-header-col-1 {
   text-align: center;
 }
@@ -4782,14 +4779,6 @@ hr::after {
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
-}
-.region-flash {
-  text-align: center;
-  display: inline;
-  float: left;
-  width: 98.95833333%;
-  margin-left: 0.52083333%;
-  margin-right: 0.52083333%;
 }
 .author-byline {
   border: thin solid rgba(0, 0, 0, 0.8);

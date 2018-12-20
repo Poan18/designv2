@@ -10,6 +10,14 @@
      list-style-type: none;
  }
 
+ .region-header {
+     position: fixed;
+     top: 0;
+     width: 101%;
+     background-color: rgba(255,255,255,.6);
+     box-shadow: 0 0 25px 0 rgba(0,0,0,.3);
+ }
+
  .region-header-col-2  {
      text-align: center;
  }
@@ -31,6 +39,10 @@
      display: none;
  }
 
+ .outer-wrap-header {
+     margin-bottom: 5%;
+ }
+
 .region-header-col-1,
 .region-header-col-3 {
     #desinax-vgrid.column(5);
@@ -41,7 +53,8 @@
 }
 
 .my-navbar li {
-    background-color: @backgroundColor;
+    background-color: rgba(255,255,255);
+    // box-shadow: 0 0 25px 0 rgba(0,0,0,.3);
 }
 
 .rm-desktop li a {

@@ -1,0 +1,76 @@
+/*!
+ * Stylesheet for Kmom06 - Designelement.
+ *
+ * This stylesheet is for the design course and kmom03 where we use LESS.
+ */
+
+ /**
+ * Import mixin
+ */
+@import "mixin/clearfix.less";
+.clearfix() {
+    #design-mixin.clearfix();
+}
+
+/**
+* Normalize and reset the style.
+*/
+@import "normalize.css/normalize.less";
+
+/**
+ * Font Awesome.
+ */
+@import "@fortawesome/fontawesome-free/less/fontawesome.less";
+@import "@fortawesome/fontawesome-free/less/solid.less";
+@import "@fortawesome/fontawesome-free/less/brands.less";
+
+/**
+ * Import the typographic grid.
+ */
+@import "@desinax/typographic-grid/less/typography-font-families.less";
+@import "@desinax/typographic-grid/less/typography-defaults.less";
+
+// Show the grid
+.hgrid .inner-wrap {
+    @gridImage: "../img/magic-number-@{magicNumber}.png";
+    #desinax-hgrid.showGrid(@gridImage);
+}
+
+/**
+ * A responsive menu.
+ */
+@import "@desinax/responsive-menu/less/responsive-menu.less";
+@import "@desinax/responsive-menu/less/media-queries.less";
+
+/**
+ * Import the vertical grid.
+ */
+@import "@desinax/vertical-grid/less/grid.less";
+
+@import "base/base_kmom06.less";
+@import "layout/layout_kmom06.less";
+@import "module/header_06.less";
+@import "module/footer_minimal.less";
+@import "module/flash_04.less";
+@import "module/byline_04.less";
+@import "module/breadcrumb_04.less";
+@import url('https://fonts.googleapis.com/css?family=Poiret+One|Didact+Gothic');
+
+/**
+ * Figure and figcaption for images and other media using figure/figcaption
+ */
+@import "@desinax/figure/less/asciinema.less";
+@import "@desinax/figure/less/codepen.less";
+@import "@desinax/figure/less/figure.less";
+@import "module/desinaxFigure.less";
+
+// Magic number and base fontsize
+@magicNumber:  24px;  // 22px
+@fontSizeBody: 18px;
+
+@fontFamilyHeadings: Poiret One;
+@fontFamilyBody: Didact Gothic;
+
+@backgroundColor: white;
+@textColor: black;
+@bgImage: url(../image/whitewood.jpg?sharpen);
